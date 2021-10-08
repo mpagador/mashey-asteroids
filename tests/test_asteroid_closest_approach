@@ -1,7 +1,7 @@
 import requests, json, pytest
 from asteroids.asteroid_closest_approach import asteroid_closest_approach
 
-def asteroids_closest_approach_test():
+def test_asteroids_closest_approach():
     asteroids_json = asteroid_closest_approach()
     asteroids = json.loads(asteroids_json)
 
