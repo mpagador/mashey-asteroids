@@ -2,7 +2,7 @@ import requests, json, pytest
 from asteroids.asteroid_closest_approach import asteroid_closest_approach
 
 def test_asteroids_closest_approach():
-    asteroids_json = asteroid_closest_approach()
+    asteroids_json = asteroid_closest_approach(10)
     asteroids = json.loads(asteroids_json)
 
     for i in range(len(asteroids)):
@@ -13,6 +13,7 @@ def test_asteroids_closest_approach():
         assert asteroids[i]['designation']
         assert asteroids[i]['nasa_jpl_url']
         assert asteroids[i]['close_approach_data']
+        assert type(asteroids[i]['close_approach_data']) is dict
         # print(asteroids[i]['close_approach_data'])
-        assert float(asteroids[i]['close_approach_data']['miss_distance']['astronomical'])
+        assert asteroids[i]['close_approach_data']['miss_distance']['astronomical']
 
