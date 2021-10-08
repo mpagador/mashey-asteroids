@@ -11,6 +11,6 @@ def neo_lookup(asteroid_id):
     endpoint = "https://api.nasa.gov/neo/rest/v1/neo/{}?api_key={}".format(asteroid_id, api_key)
     return requests.get(endpoint).json()
 
-def neo_browse():
-    endpoint = "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key={}".format(api_key)
+def neo_browse(page=0):
+    endpoint = "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key={}&page={}".format(api_key, page)
     return requests.get(endpoint).json()
