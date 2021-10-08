@@ -1,5 +1,5 @@
 import json
-from .NeoWs import neo_browse
+from .neows import neo_browse
 
 def asteroid_closest_approach():
     original_data = neo_browse()
